@@ -12,10 +12,12 @@ const AuthNavigator = createStackNavigator({
         screen: Register
     },
     Welcome:{
-        screen:Welcome
+        screen:Welcome,
     }
 }, {
-    initialRouteName: 'Welcome'
+    initialRouteName: 'Welcome',
+    headerMode: 'none',
+    header: null
 });
 
 export default AuthNavigator;
