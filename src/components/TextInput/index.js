@@ -1,11 +1,19 @@
 import React from 'react';
 import { TextInput as NativeTextInput, StyleSheet } from 'react-native';
 
-import {colors} from "../../theme";
+import {colors} from "theme";
 
-const TextInput = (props) => {
+const TextInput = ({input, inputStyle, ...inputProps}) => {
+    console.log(input);
     return(
-        <NativeTextInput style={styles.baseStyle} { ...props } />
+        <NativeTextInput
+            style={[styles.baseStyle, inputStyle]}
+            {...inputProps}
+            onChangeText={input.onChange}
+            onBlur={input.onBlur}
+            onFocus={input.onFocus}
+            value={input.value}
+        />
     )
 };
 

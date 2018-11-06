@@ -8,9 +8,9 @@ import Text from '../Text';
 class Button extends Component{
 
     render(){
-        const { onClick, labelId, btnStyle, btnTextStyle } = this.props;
+        const { onPress, labelId, btnStyle, btnTextStyle } = this.props;
         return(
-            <TouchableOpacity onPress={onClick} >
+            <TouchableOpacity onPress={onPress} >
                 <View style={[styles.container, btnStyle]}>
                     <Text labelId={labelId} textStyle={[styles.textStyle, btnTextStyle]}/>
                 </View>

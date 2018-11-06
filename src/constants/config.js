@@ -1,1 +1,1 @@
-export const API_BASE_URL = 'your api url';
+export const API_BASE_URL = 'http://minner.yazilim.io/';

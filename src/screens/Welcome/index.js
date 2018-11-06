@@ -10,6 +10,7 @@ import Button from "../../components/Button";
 class Welcome extends Component {
 
     loginButtonPressHandler = () => {
+        console.log('clicked');
         navigation.navigate('Login');
     };
 
@@ -18,12 +19,13 @@ class Welcome extends Component {
     };
 
     render(){
+        console.log('props:',this.props);
         return(
             <View style={styles.container}>
                 <View style={styles.UIWrapper}>
                     <Text labelId="greetings" textStyle={styles.greetingsTxt} />
-                    <Button btnStyle={styles.loginButton} onPress={() => this.loginButtonPressHandler()} labelId="buttons.login"/>
-                    <Button btnStyle={styles.registerButton} onPress={() => this.registerButtonPressHandler()} labelId="buttons.login" btnTextStyle={styles.registerButtonText} />
+                    <Button btnStyle={styles.loginButton} onPress={() => this.loginButtonPressHandler()} labelId="buttons.login" btnTextStyle={styles.loginButtonText}/>
+                    <Button btnStyle={styles.registerButton} onPress={() => this.registerButtonPressHandler()} labelId="buttons.register" btnTextStyle={styles.registerButtonText} />
                 </View>
             </View>
         )
@@ -35,7 +37,7 @@ export default  Welcome;
 const styles = StyleSheet.create({
     container:{
         flex: 1,
-        backgroundColor: colors.red
+        backgroundColor: colors.white
     },
     UIWrapper:{
         flex: 1,
@@ -46,13 +48,16 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     greetingsTxt:{
-        color: colors.white,
+        color: colors.blue,
         fontSize: 20
     },
     loginButton:{
         marginTop: 10,
-        backgroundColor: colors.white,
+        backgroundColor: colors.blue,
         width: '100%'
+    },
+    loginButtonText:{
+        color: colors.white
     },
     registerButton:{
         marginTop: 10,
