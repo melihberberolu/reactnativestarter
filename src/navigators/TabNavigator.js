@@ -1,21 +1,21 @@
-import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
+import {createBottomTabNavigator, createStackNavigator} from 'react-navigation';
 import Home from "../screens/Home";
 import Profile from "../screens/Profile";
 
 
-const TabNavigator = createBottomTabNavigator({
-    HomeStack: createStackNavigator({
-        Home: {
-            screen: Home
-        }
-    }),
-    ProfileStack: createStackNavigator({
-        Profile:{
+const BottomTabNavigator = createBottomTabNavigator({
+    Home: createStackNavigator({
+            Home: {
+                screen: Home
+            }
+        }),
+    Profile: createStackNavigator({
+        Profile: {
             screen: Profile
         }
-    }),
+    })
 }, {
 
 });
 
-export default TabNavigator;
+export default createStackNavigator({ BottomTabNavigator },{ headerMode: 'none' });

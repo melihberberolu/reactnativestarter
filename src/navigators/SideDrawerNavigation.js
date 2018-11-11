@@ -1,18 +1,19 @@
-import { DrawerNavigator } from 'react-navigation'
+import React from 'react';
+import { StackNavigator, DrawerItems } from 'react-navigation'
+import { View, Text } from 'react-native';
 
-import Home from "../screens/Home";
+import Home from "screens/Home";
+import Profile from "../screens/Profile";
 
 
-const SideDrawerNavigation = DrawerNavigator({
-    Home: createStackNavigator({
-        HomeStack: {
-            screen: Home,
-            navigationOptions:{
-                headerTitle: 'Home'
-            }
-        }
-    }),
-
-},{});
+const SideDrawerNavigation = StackNavigator({
+    Home:{
+        screen: Home
+    },
+    Profile:{
+        screen: Profile
+    },
+},{
+});
 
 export default SideDrawerNavigation;

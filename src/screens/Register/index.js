@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import navigation from "navigators/navigations";
 import { FirebaseAuth } from 'configs/firebase';
 
 import Text from "components/Text";
