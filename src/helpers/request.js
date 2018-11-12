@@ -7,27 +7,15 @@ const axiosInstance = axios.create({
     baseURL: API_BASE_URL,
 });
 
-export const makeRequest = (method, path, body) => {
+export const makeRequest = async(method, path, body) => {
     switch (method) {
         case GET:
-            axiosInstance.get(`${path}`)
-                .then(response => response)
-                .catch(error => error);
-            break;
+            return await axiosInstance.get(`${path}`);
         case POST:
-            axiosInstance.post(`${path}`, { body: body })
-                .then(response => response)
-                .catch(error => error);
-            break;
+            return await axiosInstance.post(`${path}`, { body: body });
         case PUT:
-            axiosInstance.put(`${path}`, { body: body })
-                .then(response => response)
-                .catch(error => error);
-            break;
+            return await axiosInstance.put(`${path}`, { body: body });
         case DELETE:
-            axiosInstance.delete(`${path}`, { body: body })
-                .then(response => response)
-                .catch(error => error);
-            break;
+            return await axiosInstance.delete(`${path}`, { body: body });
     }
 };
