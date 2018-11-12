@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
+import { connect } from 'react-redux';
 
-import {colors} from "theme";
+import { loginRequest } from 'store/actions/authentication';
+
+import {colors} from 'theme';
 
 import LoginForm from './components/LoginForm';
 import Text from "components/Text";
@@ -21,7 +24,20 @@ class Login extends Component{
     }
 }
 
-export default Login;
+const mapStateToProps = state => {
+    return {
+        auth: state.auth
+    }
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        loginRequest: () => dispatch(loginRequest),
+
+    }
+};
+
+export default connect( mapStateToProps, mapDispatchToProps )(Login);
 
 const styles = StyleSheet.create({
     container:{
